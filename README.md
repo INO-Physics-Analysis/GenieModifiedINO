@@ -2,11 +2,13 @@
 
 The GENIE source code is modified to include exposure time in gevgen_atmo. Also the output format compatible with INO ICAL code is added.
 
-#How to RUN the executable
+How to RUN the executable
+
 gevgen_atmo -e 1 -g InoGeom_det.root -L cm -D g_cm3 -E 0,10 -f HAKKM:ino-nu-solar_max.dat[14] -o output -w 0 --cross-sections cross14.xml --seed 4321
 
-#How to convert to INO Specific Format
- gntpc -i output.100000000.ghep.root -f nu_INOGEN_rootracker -o output.root
+How to convert to INO Specific Format
+
+gntpc -i output.100000000.ghep.root -f nu_INOGEN_rootracker -o output.root
 
 
 
