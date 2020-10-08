@@ -1,15 +1,26 @@
-# The GENIE Event Generator
+# The GENIE Event Generator With Modification For INO
 
-The GENIE Generator product is an advanced physics simulation used by nearly all modern neutrino experiments and 
-it plays a key role in the exploitation of neutrino data. This product implements a modern software framework for 
-MC event generators and includes state-of-the-art physics modules for neutrino or charged-lepton interactions 
-with nucleons or nuclei, and for the simulation of nucleon decay, n-bar oscillation and boosted dark matter. 
-It captures the latest results of the GENIE global analysis of neutrino scattering data and includes several tunes 
+The GENIE source code is modified to include exposure time in gevgen_atmo. Also the output format compatible with INO ICAL code is added.
+
+#How to RUN the executable
+gevgen_atmo -e 1 -g InoGeom_det.root -L cm -D g_cm3 -E 0,10 -f HAKKM:ino-nu-solar_max.dat[14] -o output -w 0 --cross-sections cross14.xml --seed 4321
+
+#How to convert to INO Specific Format
+ gntpc -i output.100000000.ghep.root -f nu_INOGEN_rootracker -o output.root
+
+
+
+
+The GENIE Generator product is an advanced physics simulation used by nearly all modern neutrino experiments and
+it plays a key role in the exploitation of neutrino data. This product implements a modern software framework for
+MC event generators and includes state-of-the-art physics modules for neutrino or charged-lepton interactions
+with nucleons or nuclei, and for the simulation of nucleon decay, n-bar oscillation and boosted dark matter.
+It captures the latest results of the GENIE global analysis of neutrino scattering data and includes several tunes
 that were produced using the proprietary Comparisons and Tuning products.
-The GENIE physics model is universal and comprehensive:  It handles all neutrinos and targets, and all processes 
-relevant from MeV to PeV energy scales. The Generator includes several tools (flux drivers, detector geometry 
-navigation drivers, specialized event generation apps, event reweighting engines) to simulate complex experimental 
-setups in full detail and to support generator-related analysis tasks. 
+The GENIE physics model is universal and comprehensive:  It handles all neutrinos and targets, and all processes
+relevant from MeV to PeV energy scales. The Generator includes several tools (flux drivers, detector geometry
+navigation drivers, specialized event generation apps, event reweighting engines) to simulate complex experimental
+setups in full detail and to support generator-related analysis tasks.
 
 For more information, visit http://www.genie-mc.org
 
@@ -51,10 +62,10 @@ For more information, visit http://www.genie-mc.org
 ## Authors
 
 <pre>
-Luis Alvarez-Ruso [9], Costas Andreopoulos (*) [5,7], Adi Ashkenazi [4], Christopher Barry [5], Francis Bench [5], 
- Steve Dennis [5], Steve Dytman [6], Hugh Gallagher [8], Steven Gardiner[3], Walter Giele [3], Robert Hatcher [3], 
- Or Hen [4], Libo Jiang [6], Rhiannon Jones [5], Igor Kakorin [2], Konstantin Kuzmin [2], Anselmo Meregaglia [1], 
-       Donna Naples [6], Vadim Naumov [2],  Afroditi Papadopoulou [4], Gabriel Perdue [3], Marco Roda [5], 
+Luis Alvarez-Ruso [9], Costas Andreopoulos (*) [5,7], Adi Ashkenazi [4], Christopher Barry [5], Francis Bench [5],
+ Steve Dennis [5], Steve Dytman [6], Hugh Gallagher [8], Steven Gardiner[3], Walter Giele [3], Robert Hatcher [3],
+ Or Hen [4], Libo Jiang [6], Rhiannon Jones [5], Igor Kakorin [2], Konstantin Kuzmin [2], Anselmo Meregaglia [1],
+       Donna Naples [6], Vadim Naumov [2],  Afroditi Papadopoulou [4], Gabriel Perdue [3], Marco Roda [5],
               Vladyslav Syrotenko [8], Julia Tena Vidal [5], Jeremy Wolcott [8], and Julia Yarba [3]
 
                                            (The GENIE Collaboration)
@@ -63,7 +74,7 @@ Luis Alvarez-Ruso [9], Costas Andreopoulos (*) [5,7], Adi Ashkenazi [4], Christo
 (2) Joint Institute for Nuclear Research (JINR), Dubna, Moscow region, 141980, Russia
 (3) Fermi National Accelerator Laboratory, Batavia, Illinois 60510, USA
 (4) Massachusetts Institute of Technology, Dept. of Physics, Cambridge, MA 02139, USA
-(5) University of Liverpool, Dept. of Physics, Liverpool L69 7ZE, UK 
+(5) University of Liverpool, Dept. of Physics, Liverpool L69 7ZE, UK
 (6) University of Pittsburgh, Dept. of Physics and Astronomy, Pittsburgh PA 15260, USA
 (7) STFC Rutherford Appleton Laboratory, Particle Physics Dept., Oxfordshire OX11 0QX, UK
 (8) Tufts University, Dept. of Physics and Astronomy, Medford MA 02155, USA
@@ -73,25 +84,25 @@ Luis Alvarez-Ruso [9], Costas Andreopoulos (*) [5,7], Adi Ashkenazi [4], Christo
 (*) Corresponding Author:
 
  Prof. Costas Andreopoulos < constantinos.andreopoulos \at cern.ch >
-    
+
  University of Liverpool          |  U.K. Research & Innovation (UKRI)
  Faculty of Science & Engineering |  Science & Technology Facilities Council (STFC)
- School of Physical Sciences      |  Rutherford Appleton Laboratory 
+ School of Physical Sciences      |  Rutherford Appleton Laboratory
  Department of Physics            |  Particle Physics Department
  Oliver Lodge Lab 316             |  Harwell Oxford Campus, R1 2.89
  Liverpool L69 7ZE, UK            |  Oxfordshire OX11 0QX, UK          
- tel: +44-(0)1517-943201          |  tel: +44-(0)1235-445091 
+ tel: +44-(0)1517-943201          |  tel: +44-(0)1235-445091
 </pre>
- 
+
 
 ## Copyright
 
-Copyright (c) 2003-2019, The GENIE Collaboration. For information, visit http://copyright.genie-mc.org 
+Copyright (c) 2003-2019, The GENIE Collaboration. For information, visit http://copyright.genie-mc.org
 
 
 ## Physics & User manual
 
-For installation and usage information, as well as information on the GENIE framework, event generator modules and tuning, 
+For installation and usage information, as well as information on the GENIE framework, event generator modules and tuning,
 see the GENIE Physics & User Manual in the public section of the GENIE Document Database:
 https://genie-docdb.pp.rl.ac.uk/cgi-bin/ShowDocument?docid=2
 
@@ -112,7 +123,7 @@ GENIE welcomes community contributions through its Incubator. An Incubator Proje
 
 ## Citing GENIE
 
-If you use GENIE, please **always** cite the following reference: 
+If you use GENIE, please **always** cite the following reference:
 
 <pre>
 @article{Andreopoulos:2009rq,
@@ -153,4 +164,3 @@ Finally, if you used any of the standard GENIE applications, built-in flux and g
 </pre>
 
 Please notice that the GENIE authors endorse the **MCNET guidelines for fair academic use** which can be found in http://www.montecarlonet.org/GUIDELINES. We invite users to consider which GENIE components are important for a particular analysis and cite them, in addition to the main references. A list of such references in maintained in the official GENIE web page.
-# GenieModifiedINO
